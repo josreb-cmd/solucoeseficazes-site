@@ -234,11 +234,15 @@
       padding: 3.15rem 2.625rem;
       position: relative;
       overflow: hidden;
-      transition: background 0.3s;
+      transition: background 0.3s, border-color 0.3s;
       text-decoration: none;
       display: block;
+      border-top: 2px solid rgba(201,168,76,0.25);
     }
-    .product-card:hover { background: #1a3a63; }
+    .product-card:hover {
+      background: #1a3a63;
+      border-top-color: rgba(201,168,76,0.8);
+    }
     .product-name {
       font-family: 'Playfair Display', serif;
       font-size: 1.575rem;
@@ -467,9 +471,9 @@
     <div class="products-grid reveal">
 
       <!-- CREDIUM PRIME -->
-      <div class="product-card" style="cursor:default;">
+      <div class="product-card" style="cursor:default; border-top: 2px solid rgba(201,168,76,0.25);">
         <div class="product-name">Credium Prime</div>
-        <p class="product-desc">Gestão completa de processos de crédito e hipoteca.</p>
+        <p class="product-desc">Gestão completa de processos de crédito destinado a Intermediários de Crédito.</p>
         <div class="product-screenshots">
           <div class="screen-wrap" onclick="openLightbox(0)">
             <div class="screen"><img src="credium-1.png.jpeg" alt="Credium Prime — Home" loading="lazy" /></div>
