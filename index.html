@@ -253,31 +253,38 @@
       display: flex;
       gap: 0.75rem;
       margin-top: 1.5rem;
-      align-items: flex-end;
+      align-items: flex-start;
+    }
+    .product-screenshots .screen-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
     }
     .product-screenshots .screen {
-      flex: 1;
+      width: 100%;
       border-radius: 6px;
       overflow: hidden;
       border: 1px solid rgba(201,168,76,0.2);
       box-shadow: 0 8px 24px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
     }
-    .product-screenshots .screen:hover {
+    .product-screenshots .screen-wrap:hover .screen {
       transform: translateY(-4px) scale(1.03);
       box-shadow: 0 16px 36px rgba(0,0,0,0.5);
-      z-index: 2;
     }
     .product-screenshots .screen img {
       width: 100%;
       display: block;
     }
-    .product-screenshots .screen:nth-child(2) {
-      transform: translateY(-8px);
-    }
-    .product-screenshots .screen:nth-child(2):hover {
-      transform: translateY(-12px) scale(1.03);
+    .product-screenshots .screen-caption {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
+      text-align: center;
     }
 
     /* ── LIGHTBOX ── */
@@ -464,14 +471,17 @@
         <div class="product-name">Credium Prime</div>
         <p class="product-desc">Gestão completa de processos de crédito e hipoteca.</p>
         <div class="product-screenshots">
-          <div class="screen" onclick="openLightbox(0)">
-            <img src="credium-1.png.jpeg" alt="Credium Prime — Home" loading="lazy" />
+          <div class="screen-wrap" onclick="openLightbox(0)">
+            <div class="screen"><img src="credium-1.png.jpeg" alt="Credium Prime — Home" loading="lazy" /></div>
+            <div class="screen-caption">Home</div>
           </div>
-          <div class="screen" onclick="openLightbox(1)">
-            <img src="credium-2.png.jpeg" alt="Credium Prime — Gestão" loading="lazy" />
+          <div class="screen-wrap" onclick="openLightbox(1)">
+            <div class="screen"><img src="credium-2.png.jpeg" alt="Credium Prime — Gestão" loading="lazy" /></div>
+            <div class="screen-caption">Gestão</div>
           </div>
-          <div class="screen" onclick="openLightbox(2)">
-            <img src="credium-3.png.jpeg" alt="Credium Prime — Descrição" loading="lazy" />
+          <div class="screen-wrap" onclick="openLightbox(2)">
+            <div class="screen"><img src="credium-3.png.jpeg" alt="Credium Prime — Detalhe" loading="lazy" /></div>
+            <div class="screen-caption">Detalhe</div>
           </div>
         </div>
       </div>
