@@ -22,7 +22,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -67,8 +66,8 @@
       transition: color 0.2s;
     }
     nav .nav-links a:hover { color: #e8c87a !important; }
-    .nav-cta { justify-self: end; }
     .nav-cta {
+      justify-self: end;
       font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.08em;
@@ -167,7 +166,7 @@
     }
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* ── SECTION COMMONS ── */
+    /* ── SOBRE ── */
     section { padding: 7rem 4rem; }
     .section-label {
       font-size: 0.7rem;
@@ -193,9 +192,7 @@
       color: var(--text-muted);
       max-width: 520px;
     }
-    .section-sub.light { color: rgba(255,255,255,0.6); }
 
-    /* ── SOBRE ── */
     .about {
       background: var(--cream);
       display: grid;
@@ -228,6 +225,7 @@
       gap: 1.5px;
       background: rgba(201,168,76,0.15);
       border: 1px solid rgba(201,168,76,0.15);
+      align-items: stretch;
     }
     .product-card {
       background: var(--navy-mid);
@@ -236,7 +234,9 @@
       overflow: hidden;
       transition: background 0.3s, border-color 0.3s;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       border-top: 2px solid rgba(201,168,76,0.25);
     }
     .product-card:hover {
@@ -250,13 +250,18 @@
       color: var(--white);
       margin-bottom: 0.8rem;
     }
-    .product-desc { font-size: 0.924rem; font-weight: 300; color: rgba(255,255,255,0.55); margin-bottom: 1.8rem; }
+    .product-desc { 
+      font-size: 0.924rem; 
+      font-weight: 300; 
+      color: rgba(255,255,255,0.55); 
+      margin-bottom: 1.8rem;
+      flex-grow: 1;
+    }
 
-    /* ── SCREENSHOTS CREDIUM ── */
     .product-screenshots {
       display: flex;
       gap: 0.75rem;
-      margin-top: 1.5rem;
+      margin-top: auto;
       align-items: flex-start;
     }
     .product-screenshots .screen-wrap {
@@ -279,10 +284,7 @@
       transform: translateY(-4px) scale(1.03);
       box-shadow: 0 16px 36px rgba(0,0,0,0.5);
     }
-    .product-screenshots .screen img {
-      width: 100%;
-      display: block;
-    }
+    .product-screenshots .screen img { width: 100%; display: block; }
     .product-screenshots .screen-caption {
       font-size: 0.7rem;
       letter-spacing: 0.1em;
@@ -318,7 +320,6 @@
       cursor: pointer;
       background: none;
       border: none;
-      line-height: 1;
     }
     .lightbox-prev, .lightbox-next {
       position: absolute;
@@ -330,15 +331,12 @@
       border: none;
       padding: 1rem;
       opacity: 0.7;
-      transition: opacity 0.2s;
     }
-    .lightbox-prev:hover, .lightbox-next:hover { opacity: 1; }
     .lightbox-prev { left: 1.5rem; }
     .lightbox-next { right: 1.5rem; }
 
     /* ── SIMULADORES ── */
     .simulators { background: var(--cream-dark); text-align: center; }
-    .simulators .section-sub { margin: 0 auto; }
     .sim-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -353,6 +351,7 @@
       padding: 2.1rem 1.89rem;
       transition: background 0.25s;
       text-align: left;
+      height: 100%;
     }
     .sim-card:hover { background: var(--white); }
     .sim-name {
@@ -380,12 +379,10 @@
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
       border-radius: 2px; padding: 0.8rem 1rem; color: var(--white); outline: none; font-family: inherit;
     }
-    .form-group select option { background: var(--navy); }
     .btn-submit {
       font-size: 0.82rem; font-weight: 500; text-transform: uppercase;
       color: var(--navy); background: var(--gold); padding: 1rem 2rem;
-      border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s;
-      align-self: flex-start; margin-top: 1rem;
+      border: none; border-radius: 2px; cursor: pointer; align-self: flex-start; margin-top: 1rem;
     }
     .contact-detail { border-left: 2px solid rgba(201,168,76,0.3); padding-left: 1.5rem; margin-bottom: 2.5rem; }
     .contact-detail .label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
@@ -402,11 +399,7 @@
       border-top: 1px solid rgba(201,168,76,0.1);
     }
     footer .logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--gold); }
-    footer p {
-      font-size: 0.85rem;
-      color: #C9A84C !important;
-      font-weight: 500;
-    }
+    footer p { font-size: 0.85rem; color: #C9A84C !important; font-weight: 500; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -418,7 +411,6 @@
       .products-grid { grid-template-columns: 1fr; }
       .sim-grid { grid-template-columns: 1fr 1fr; max-width: 600px; }
       .contact { grid-template-columns: 1fr; gap: 3rem; }
-      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -451,12 +443,8 @@
 
   <section class="about" id="sobre">
     <div class="about-visual reveal">
-      <div class="about-card main">
-        <div class="card-value">Simplificar processos financeiros complexos</div>
-      </div>
-      <div class="about-card accent">
-        <div class="card-value">Crédito · Condomínios · Fiscalidade</div>
-      </div>
+      <div class="about-card main"><div class="card-value">Simplificar processos financeiros complexos</div></div>
+      <div class="about-card accent"><div class="card-value">Crédito · Condomínios · Fiscalidade</div></div>
     </div>
     <div class="about-text reveal">
       <div class="section-label">Sobre Nós</div>
@@ -470,33 +458,33 @@
     <h2 class="section-title light">Produtos</h2>
     <div class="products-grid reveal">
 
-      <div class="product-card" style="cursor:default; border-top: 2px solid rgba(201,168,76,0.25);">
+      <div class="product-card" style="cursor:default;">
         <div class="product-name">Credium Prime</div>
         <p class="product-desc">Gestão completa de processos de crédito destinado a Intermediários de Crédito.</p>
         <div class="product-screenshots">
           <div class="screen-wrap" onclick="openLightbox(0)">
-            <div class="screen"><img src="credium-1.jpeg" alt="Credium Prime — Home" loading="lazy" /></div>
-            <div class="screen-caption">Home</div>
+            <div class="screen"><img src="credium-1.jpeg" alt="Credium Prime — Interface" /></div>
+            <div class="screen-caption">Interface</div>
           </div>
           <div class="screen-wrap" onclick="openLightbox(1)">
-            <div class="screen"><img src="credium-2.jpg" alt="Credium Prime — Gestão" loading="lazy" /></div>
-            <div class="screen-caption">Gestão</div>
+            <div class="screen"><img src="credium-2.jpg" alt="Credium Prime — Home" /></div>
+            <div class="screen-caption">Home</div>
           </div>
           <div class="screen-wrap" onclick="openLightbox(2)">
-            <div class="screen"><img src="credium-3.jpg" alt="Credium Prime — Detalhe" loading="lazy" /></div>
-            <div class="screen-caption">Detalhe</div>
+            <div class="screen"><img src="credium-3.jpg" alt="Credium Prime — Gestão" /></div>
+            <div class="screen-caption">Gestão</div>
           </div>
         </div>
       </div>
 
       <a href="#contacto" class="product-card">
         <div class="product-name">Quotalis</div>
-        <p class="product-desc">Sistema de gestão de quotas e administração de condomínios.</p>
+        <p class="product-desc">Sistema de gestão de quotas e administração de condomínios profissionais e independentes.</p>
       </a>
 
       <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="product-card">
         <div class="product-name">Simuladores Financeiros</div>
-        <p class="product-desc">Suite completa de simuladores para o mercado português.</p>
+        <p class="product-desc">Suite completa de simuladores para o mercado imobiliário e financeiro português.</p>
       </a>
 
     </div>
@@ -513,33 +501,13 @@
     <div class="section-label">Suite Online</div>
     <h2 class="section-title">Simuladores Financeiros</h2>
     <div class="sim-grid reveal">
-      <div class="sim-card">
-        <div class="sim-icon">🏠</div>
-        <div class="sim-name">Crédito Habitação</div>
-        <p class="sim-desc">Simulação de prestações, TAEG, MTIC e encargos totais.</p>
-      </div>
-      <div class="sim-card">
-        <div class="sim-icon">🧾</div>
-        <div class="sim-name">IMT & Selo</div>
-        <p class="sim-desc">Cálculo automático dos impostos de transmissão imobiliária.</p>
-      </div>
-      <div class="sim-card">
-        <div class="sim-icon">🚗</div>
-        <div class="sim-name">Leasing</div>
-        <p class="sim-desc">Comparação entre leasing e crédito convencional.</p>
-      </div>
-      <div class="sim-card">
-        <div class="sim-icon">💶</div>
-        <div class="sim-name">Crédito Pessoal</div>
-        <p class="sim-desc">Simulação de empréstimos com amortização detalhada.</p>
-      </div>
-      <div class="sim-card">
-        <div class="sim-icon">📈</div>
-        <div class="sim-name">Investimento</div>
-        <p class="sim-desc">Projeção de retorno com capitalização simples e composta.</p>
-      </div>
+      <div class="sim-card"><div class="sim-name">Crédito Habitação</div><p class="sim-desc">Simulação de prestações, TAEG e encargos totais.</p></div>
+      <div class="sim-card"><div class="sim-name">IMT & Selo</div><p class="sim-desc">Cálculo automático dos impostos de transmissão imobiliária.</p></div>
+      <div class="sim-card"><div class="sim-name">Leasing</div><p class="sim-desc">Comparação entre leasing e crédito convencional.</p></div>
+      <div class="sim-card"><div class="sim-name">Crédito Pessoal</div><p class="sim-desc">Simulação de empréstimos com amortização detalhada.</p></div>
+      <div class="sim-card"><div class="sim-name">Investimento</div><p class="sim-desc">Projeção de retorno com capitalização composta.</p></div>
       <div class="sim-card" style="background: var(--navy); display: flex; align-items: center; justify-content: center;">
-        <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="btn-primary" style="text-align: center; font-size: 0.72rem; padding: 0.7rem 1rem;">Ver Todos →</a>
+        <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="btn-primary" style="font-size: 0.72rem; padding: 0.7rem 1rem;">Ver Todos →</a>
       </div>
     </div>
   </section>
@@ -549,43 +517,18 @@
       <div class="section-label">Contacto</div>
       <h2 class="section-title light">Vamos conversar</h2>
       <div class="contact-info" style="margin-top: 3rem;">
-        <div class="contact-detail">
-          <div class="label">Website</div>
-          <div class="value">www.solucoeseficazes.pt</div>
-        </div>
-        <div class="contact-detail">
-          <div class="label">E-mail</div>
-          <div class="value">info@solucoeseficazes.pt</div>
-        </div>
-        <div class="contact-detail">
-          <div class="label">Mercado</div>
-          <div class="value">Portugal — Setor Financeiro e Imobiliário</div>
-        </div>
+        <div class="contact-detail"><div class="label">Website</div><div class="value">www.solucoeseficazes.pt</div></div>
+        <div class="contact-detail"><div class="label">E-mail</div><div class="value">info@solucoeseficazes.pt</div></div>
       </div>
     </div>
     <div class="reveal">
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <input type="hidden" name="access_key" value="f3f141f1-188b-49f5-94eb-b627ccbe3e69" />
-        <input type="hidden" name="subject" value="Novo contacto — solucoeseficazes.pt" />
-        <input type="hidden" name="from_name" value="Soluções Eficazes Website" />
-        
         <div class="form-row">
           <div class="form-group"><label>Nome</label><input type="text" name="name" required /></div>
           <div class="form-group"><label>Empresa</label><input type="text" name="empresa" /></div>
         </div>
         <div class="form-group"><label>Email</label><input type="email" name="email" required /></div>
-        
-        <div class="form-group">
-          <label>Interesse</label>
-          <select name="interesse">
-            <option value="">Selecionar produto...</option>
-            <option>Credium Prime — Intermediação de Crédito</option>
-            <option>Quotalis — Gestão de Condomínios</option>
-            <option>Simuladores Financeiros</option>
-            <option>Outro</option>
-          </select>
-        </div>
-
         <div class="form-group"><label>Mensagem</label><textarea name="message" rows="4"></textarea></div>
         <button type="submit" class="btn-submit">Enviar Mensagem →</button>
         <div id="form-msg" style="display:none; margin-top:1rem; font-size:0.85rem;"></div>
@@ -599,7 +542,6 @@
   </footer>
 
   <script>
-    // ── Scroll reveal ──
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
@@ -611,12 +553,7 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
-    // ── Lightbox ──
-    const lightboxImgs = [
-      'credium-1.jpeg',
-      'credium-2.jpg',
-      'credium-3.jpg'
-    ];
+    const lightboxImgs = ['credium-1.jpeg', 'credium-2.jpg', 'credium-3.jpg'];
     let currentImg = 0;
 
     function openLightbox(index) {
@@ -629,9 +566,7 @@
       document.getElementById('lightbox').classList.remove('open');
       document.body.style.overflow = '';
     }
-    function closeLightboxOutside(e) {
-      if (e.target === document.getElementById('lightbox')) closeLightbox();
-    }
+    function closeLightboxOutside(e) { if (e.target === document.getElementById('lightbox')) closeLightbox(); }
     function changeLightbox(dir) {
       currentImg = (currentImg + dir + lightboxImgs.length) % lightboxImgs.length;
       document.getElementById('lightbox-img').src = lightboxImgs[currentImg];
@@ -642,7 +577,6 @@
       if (e.key === 'ArrowRight') changeLightbox(1);
     });
 
-    // ── Formulário ──
     async function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -656,9 +590,7 @@
         msg.style.color = data.success ? 'var(--gold)' : '#f87171';
         msg.textContent = data.success ? 'Mensagem enviada com sucesso.' : 'Erro ao enviar.';
         if(data.success) form.reset();
-      } catch (err) {
-        msg.textContent = 'Erro de ligação.';
-      }
+      } catch (err) { msg.textContent = 'Erro de ligação.'; }
       btn.disabled = false; btn.textContent = 'Enviar Mensagem →';
     }
   </script>
