@@ -470,33 +470,30 @@
     <h2 class="section-title light">Produtos</h2>
     <div class="products-grid reveal">
 
-      <!-- CREDIUM PRIME -->
       <div class="product-card" style="cursor:default; border-top: 2px solid rgba(201,168,76,0.25);">
         <div class="product-name">Credium Prime</div>
         <p class="product-desc">Gestão completa de processos de crédito destinado a Intermediários de Crédito.</p>
         <div class="product-screenshots">
           <div class="screen-wrap" onclick="openLightbox(0)">
-            <div class="screen"><img src="credium-1.png.jpeg" alt="Credium Prime — Home" loading="lazy" /></div>
+            <div class="screen"><img src="credium-1.jpeg" alt="Credium Prime — Home" loading="lazy" /></div>
             <div class="screen-caption">Home</div>
           </div>
           <div class="screen-wrap" onclick="openLightbox(1)">
-            <div class="screen"><img src="credium-2.png.jpeg" alt="Credium Prime — Gestão" loading="lazy" /></div>
+            <div class="screen"><img src="credium-2.jpg" alt="Credium Prime — Gestão" loading="lazy" /></div>
             <div class="screen-caption">Gestão</div>
           </div>
           <div class="screen-wrap" onclick="openLightbox(2)">
-            <div class="screen"><img src="credium-3.png.jpeg" alt="Credium Prime — Detalhe" loading="lazy" /></div>
+            <div class="screen"><img src="credium-3.jpg" alt="Credium Prime — Detalhe" loading="lazy" /></div>
             <div class="screen-caption">Detalhe</div>
           </div>
         </div>
       </div>
 
-      <!-- QUOTALIS -->
       <a href="#contacto" class="product-card">
         <div class="product-name">Quotalis</div>
         <p class="product-desc">Sistema de gestão de quotas e administração de condomínios.</p>
       </a>
 
-      <!-- SIMULADORES -->
       <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="product-card">
         <div class="product-name">Simuladores Financeiros</div>
         <p class="product-desc">Suite completa de simuladores para o mercado português.</p>
@@ -505,7 +502,6 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <button class="lightbox-prev" onclick="changeLightbox(-1)">&#8249;</button>
@@ -617,9 +613,9 @@
 
     // ── Lightbox ──
     const lightboxImgs = [
-      'credium-1.png.jpeg',
-      'credium-2.png.jpeg',
-      'credium-3.png.jpeg'
+      'credium-1.jpeg',
+      'credium-2.jpg',
+      'credium-3.jpg'
     ];
     let currentImg = 0;
 
