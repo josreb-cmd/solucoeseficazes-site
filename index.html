@@ -228,6 +228,7 @@
       gap: 1.5px;
       background: rgba(201,168,76,0.15);
       border: 1px solid rgba(201,168,76,0.15);
+      align-items: stretch; /* Garante que os itens da grid estiquem */
     }
     .product-card {
       background: var(--navy-mid);
@@ -236,7 +237,9 @@
       overflow: hidden;
       transition: background 0.3s, border-color 0.3s;
       text-decoration: none;
-      display: block;
+      display: flex; /* Flexbox para controlar altura interna */
+      flex-direction: column;
+      height: 100%; /* Ocupa toda a altura da célula da grid */
       border-top: 2px solid rgba(201,168,76,0.25);
     }
     .product-card:hover {
@@ -250,13 +253,19 @@
       color: var(--white);
       margin-bottom: 0.8rem;
     }
-    .product-desc { font-size: 0.924rem; font-weight: 300; color: rgba(255,255,255,0.55); margin-bottom: 1.8rem; }
+    .product-desc { 
+      font-size: 0.924rem; 
+      font-weight: 300; 
+      color: rgba(255,255,255,0.55); 
+      margin-bottom: 1.8rem;
+      flex-grow: 1; /* Faz a descrição ocupar o espaço restante, empurrando as imagens para baixo */
+    }
 
     /* ── SCREENSHOTS CREDIUM ── */
     .product-screenshots {
       display: flex;
       gap: 0.75rem;
-      margin-top: 1.5rem;
+      margin-top: auto; /* Garante que fiquem no fundo se houver flex-grow */
       align-items: flex-start;
     }
     .product-screenshots .screen-wrap {
@@ -353,6 +362,7 @@
       padding: 2.1rem 1.89rem;
       transition: background 0.25s;
       text-align: left;
+      height: 100%; /* Igualar simuladores também */
     }
     .sim-card:hover { background: var(--white); }
     .sim-name {
@@ -491,12 +501,12 @@
 
       <a href="#contacto" class="product-card">
         <div class="product-name">Quotalis</div>
-        <p class="product-desc">Sistema de gestão de quotas e administração de condomínios.</p>
+        <p class="product-desc">Sistema de gestão de quotas e administração de condomínios profissionais e independentes.</p>
       </a>
 
       <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="product-card">
         <div class="product-name">Simuladores Financeiros</div>
-        <p class="product-desc">Suite completa de simuladores para o mercado português.</p>
+        <p class="product-desc">Suite completa de simuladores para o mercado imobiliário e financeiro português.</p>
       </a>
 
     </div>
