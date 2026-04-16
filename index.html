@@ -250,7 +250,76 @@
       color: var(--white);
       margin-bottom: 0.8rem;
     }
-    .product-desc { font-size: 0.924rem; font-weight: 300; color: rgba(255,255,255,0.55); margin-bottom: 1.8rem; }
+    .product-desc { font-size: 0.924rem; font-weight: 300; color: rgba(255,255,255,0.55); margin-bottom: 1rem; }
+    .product-hint { font-size: 0.82rem; font-style: italic; color: rgba(201,168,76,0.7); margin-bottom: 1.5rem; }
+
+    /* ── BADGES ── */
+    .product-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    .badge-available { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); }
+    .badge-soon { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.15); }
+    .badge-free { background: rgba(52,199,89,0.12); color: #4ade80; border: 1px solid rgba(52,199,89,0.3); }
+
+    /* ── PRODUCT BUTTONS ── */
+    .product-btn-primary {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.7rem 1.4rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .product-btn-primary:hover { background: var(--gold-light); }
+    .product-btn-outline {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      background: transparent;
+      padding: 0.7rem 1.4rem;
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .product-btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .product-btn-green {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #0B1F3A;
+      background: #4ade80;
+      padding: 0.7rem 1.4rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .product-btn-green:hover { background: #6ee79a; }
+
+    /* ── SIM LIST ── */
+    .sim-list { list-style: none; margin: 0.8rem 0 0 0; padding: 0; }
+    .sim-list li { font-size: 0.82rem; color: rgba(255,255,255,0.5); padding: 0.25rem 0; padding-left: 1rem; position: relative; }
+    .sim-list li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
 
     /* ── SCREENSHOTS CREDIUM ── */
     .product-screenshots {
@@ -471,8 +540,10 @@
     <div class="products-grid reveal">
 
       <div class="product-card" style="cursor:default; border-top: 2px solid rgba(201,168,76,0.25);">
+        <span class="product-badge badge-available">Disponível</span>
         <div class="product-name">Credium Prime</div>
         <p class="product-desc">Gestão completa de processos de crédito destinado a Intermediários de Crédito.</p>
+        <p class="product-hint">Solução completa para Intermediários de Crédito.</p>
         <div class="product-screenshots">
           <div class="screen-wrap" onclick="openLightbox(0)">
             <div class="screen"><img src="credium-1.jpeg" alt="Credium Prime — Overview" loading="lazy" /></div>
@@ -487,17 +558,29 @@
             <div class="screen-caption">Gestão</div>
           </div>
         </div>
+        <a href="#contacto" class="product-btn-primary">Pedir Demonstração</a>
       </div>
 
-      <a href="#contacto" class="product-card">
+      <div class="product-card" style="cursor:default;">
+        <span class="product-badge badge-soon">Em Breve</span>
         <div class="product-name">Quotalis</div>
-        <p class="product-desc">Sistema de gestão de quotas e administração de condomínios.</p>
-      </a>
+        <p class="product-desc">Sistema de gestão de quotas e administração de condomínios. Automatize cobranças, relatórios e comunicação com condóminos.</p>
+        <a href="#contacto" class="product-btn-outline">Saber Mais</a>
+      </div>
 
-      <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="product-card">
+      <div class="product-card" style="cursor:default;">
+        <span class="product-badge badge-free">Acesso Livre</span>
         <div class="product-name">Simuladores Financeiros</div>
         <p class="product-desc">Suite completa de simuladores para o mercado português.</p>
-      </a>
+        <ul class="sim-list">
+          <li>Crédito Habitação</li>
+          <li>IMT &amp; Imposto de Selo</li>
+          <li>Leasing</li>
+          <li>Crédito Pessoal</li>
+          <li>Investimento</li>
+        </ul>
+        <a href="https://josreb-cmd.github.io/Portfolio" target="_blank" class="product-btn-green">Utilizar Agora</a>
+      </div>
 
     </div>
   </section>
